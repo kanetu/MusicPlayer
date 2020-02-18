@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+.music-player{
+    width: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#music-header{
+    padding: 10px;
+    box-shadow: 0 0 18px 2px lightgray;
+    border-radius: 30px;
+    width: 100%;
+    display: flex;
+}
+
+#album-art {
+    flex-basis: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#album-art img{
+    width: 120px;
+    border-radius: 50%;
+}
+#album-art.active{
+    -webkit-animation: rotateAlbumArt 3s linear 0s infinite forwards;
+            animation: rotateAlbumArt 3s linear 0s infinite forwards;
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+}
+#player-control{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+#player-control img{
+    width: 15px;
+    height: 15px;
+}
+
+#prev-audio, #play-pause, #next-audio{
+    height: 50px;
+    width: 50px;
+    margin: 0 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px 2px lightgrey;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+
+#prev-audio:active, 
+#play-pause:active, 
+#next-audio:active{
+    box-shadow: none;
+}
+
+#prev-audio{
+    transform: rotate(180deg);
+}
+
+#music-body{
+    box-shadow: 0 0 18px 2px lightgrey;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+    width: 100%;
+}
+#list-music {
+    padding: 0 10px;
+}
+
+#list-music{
+    list-style: none;
+}
+
+#list-music > li{
+    padding: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+#list-music > li:hover{
+    box-shadow: 0 0 18px 2px lightgray;
+    background: #fff;
+    border-radius: 8px;
+    transform: scale(1.25);
+}
+
+
+@-webkit-keyframes rotateAlbumArt
+{
+    0%{ -webkit-transform: rotateZ(0); transform: rotateZ(0); }
+    100%{ -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
+
+@keyframes rotateAlbumArt
+{
+    0%{ -webkit-transform: rotateZ(0); transform: rotateZ(0); }
+    100%{ -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
